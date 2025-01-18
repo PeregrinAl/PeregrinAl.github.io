@@ -5,42 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Resume</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        function toggleLanguage() {
+            const sections = document.querySelectorAll('[data-lang]');
+            sections.forEach(section => {
+                section.classList.toggle('hidden');
+            });
+        }
+    </script>
 </head>
 <body>
-    <header>
-        <h1>[Ваше имя]</h1>
+    <header class="hidden" data-lang="en">
+        <h1>Alexandra Parshintseva</h1>
         <p>Java Developer | C++ Programmer | System Designer</p>
+        <button onclick="toggleLanguage()">Switch Language</button>
     </header>
 
-    <section id="contact">
+    <header data-lang="ru">
+        <h1>Александра Паршинцева</h1>
+        <p>Java Developer | C++ Programmer | System Designer</p>
+        <button onclick="toggleLanguage()">Изменить язык</button>
+    </header>
+
+    <section id="contact" class="hidden" data-lang="en">
         <h2>Contact Information</h2>
         <ul>
-            <li><strong>Phone:</strong> [Ваш номер телефона]</li>
-            <li><strong>Email:</strong> [Ваш email]</li>
-            <li><strong>LinkedIn/GitHub/Portfolio:</strong> <a href="[ссылка]">[ссылка]</a></li>
+            <li><strong>Phone:</strong> +7-993-425-31-20</li>
+            <li><strong>Email:</strong> hertrude@internet.ru</li>
+            <li><strong>Telegram:</strong> <a href="https://t.me/PeregrinAl">t.me/PeregrinAl</a></li>
+            <li><strong>GitHub:</strong> <a href="https://github.com/PeregrinAl">github.com/PeregrinAl</a></li>
         </ul>
     </section>
 
-    <section id="objective">
-        <h2>Objective</h2>
-        <p>I am looking for a developer position where I can apply my skills in Java, Spring, JavaFX, and C++ to build server-side logic and desktop applications while continuing to grow as a software engineer.</p>
+    <section id="contact" data-lang="ru">
+        <h2>Контактная информация</h2>
+        <ul>
+            <li><strong>Телефон:</strong> +7-993-425-31-20</li>
+            <li><strong>Email:</strong> hertrude@internet.ru</li>
+            <li><strong>Telegram:</strong> <a href="https://t.me/PeregrinAl">t.me/PeregrinAl</a></li>
+            <li><strong>GitHub:</strong> <a href="https://github.com/PeregrinAl">github.com/PeregrinAl</a></li>
+        </ul>
     </section>
 
-    <section id="education">
+    <section id="objective" class="hidden" data-lang="en">
+        <h2>Objective</h2>
+        <p>I am looking for a developer position where I can apply my skills in Java, Spring, JavaFX, and C++ to build server-side logic and desktop applications</p>
+    </section>
+
+    <section id="objective" data-lang="ru">
+        <h2>Цель</h2>
+        <p>Ищу позицию разработчика, где могу применить свои навыки в Java, Spring, JavaFX и C++ для разработки серверной логики и настольных приложений</p>
+    </section>
+
+    <section id="skills" class="hidden" data-lang="en">
+        <h2>Skills</h2>
+        <ul>
+            <li><strong>Technical:</strong> Java, C++, PHP, SQL, Spring, JavaFX, Laravel</li>
+            <li><strong>Tools:</strong> PowerBI, UML, Cisco Packet Tracer</li>
+            <li><strong>Soft Skills:</strong> Responsibility, attentiveness, calmness</li>
+            <li><strong>Other:</strong> Master of Sports in Rifle Shooting, video tutorial creation, English B2 (fluent in technical documentation reading)</li>
+        </ul>
+    </section>
+
+    <section id="skills" data-lang="ru">
+        <h2>Навыки</h2>
+        <ul>
+            <li><strong>Технические:</strong> Java, C++, PHP, SQL, Spring, JavaFX, Laravel</li>
+            <li><strong>Инструменты:</strong> PowerBI, UML, Cisco Packet Tracer</li>
+            <li><strong>Soft навыки:</strong> Ответственность, внимательность, спокойствие</li>
+            <li><strong>Другие:</strong> Мастер спорта по стрельбе, создание видео-уроков, Английский B2 (свободно читаю технические документации)</li>
+        </ul>
+    </section>
+
+    <section id="education" class="hidden" data-lang="en">
         <h2>Education</h2>
         <ul>
             <li>
                 <strong>Master's Degree, Neurophilosophy and Software Engineering</strong><br>
-                ITMO University, [год начала] – Present
+                ITMO University, 2024 – Present
             </li>
             <li>
                 <strong>Bachelor's Degree, Software Engineering</strong><br>
-                [Ваш университет], [год начала] – [год окончания]
+                Kurgan State University, 2020 – 2024
             </li>
         </ul>
     </section>
 
-    <section id="experience">
+    <section id="education" data-lang="ru">
+        <h2>Образование</h2>
+        <ul>
+            <li>
+                <strong>Магистратура, Нейрофилология и программная инженерия</strong><br>
+                Университет ИТМО, 2024 – Настоящее время
+            </li>
+            <li>
+                <strong>Бакалавриат, Программная инженерия</strong><br>
+                Курганский Государственный Университет, 2020 – 2024
+            </li>
+        </ul>
+    </section>
+
+    <section id="experience" class="hidden" data-lang="en">
         <h2>Work Experience</h2>
         <ul>
             <li>
@@ -52,7 +117,7 @@
                 </ul>
             </li>
             <li>
-                <strong>[Current Job] (December 2024 – Present)</strong><br>
+                <strong>Baltech (December 2024 – Present)</strong><br>
                 Programmer
                 <ul>
                     <li>Developing server-side applications with Spring</li>
@@ -63,7 +128,31 @@
         </ul>
     </section>
 
-    <section id="projects">
+    <section id="experience" data-lang="ru">
+        <h2>Опыт работы</h2>
+        <ul>
+            <li>
+                <strong>Центральный Банк РФ (Январь 2023 – Июль 2023)</strong><br>
+                Программист
+                <ul>
+                    <li>Автоматизация рабочих процессов обработки и подготовки данных в Excel</li>
+                    <li>Подготовка аналитических отчетов в PowerBI</li>
+                    
+                </ul>
+            </li>
+            <li>
+                <strong>Baltech (Декабрь 2024 – Настоящее время)</strong><br>
+                Программист
+                <ul>
+                    <li>Разработка и поддержка серверных приложений с помощью Spring</li>
+                    <li>Создание настольных приложений с использованием JavaFX</li>
+                    <li>Поддержка библиотеки обработки сигналов на языке C++</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section id="projects" class="hidden" data-lang="en">
         <h2>Projects</h2>
         <ul>
             <li>
@@ -76,18 +165,21 @@
         </ul>
     </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
+    <section id="projects" data-lang="ru">
+        <h2>Проекты</h2>
         <ul>
-            <li><strong>Technical:</strong> Java, C++, PHP, SQL, Spring, JavaFX, Laravel</li>
-            <li><strong>Tools:</strong> PowerBI, UML, Cisco Packet Tracer</li>
-            <li><strong>Soft Skills:</strong> Responsibility, attentiveness, calmness</li>
-            <li><strong>Other:</strong> Master of Sports in Rifle Shooting, video tutorial creation, fluent in English</li>
+            <li>
+                <strong>Веб-сервис для логопедов</strong> (1 месяц разработки)
+                <ul>
+                    <li>Позволяет создавать упражнения и сценарии для пациентов</li>
+                    <li>Технологии: Laravel, Livewire, MySQL</li>
+                </ul>
+            </li>
         </ul>
     </section>
 
     <footer>
-        <p>&copy; 2025 [Ваше имя]. All rights reserved.</p>
+        <p>&copy; 2025 PeregrinAl.</p>
     </footer>
 </body>
 </html>
